@@ -1,9 +1,7 @@
-.header {
+/* .header {
     display: flex;
     justify-content: space-between;
     height: 90px;
-    /* background-color: greenyellow; */
-
     position: sticky;
     top: 0;
 }
@@ -41,4 +39,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
