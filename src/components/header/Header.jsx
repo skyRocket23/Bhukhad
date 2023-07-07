@@ -11,7 +11,7 @@ const Header = ({ toggleTheme }) => {
   const isOnline = useCheckOnline();
 
   return (
-    <div className="flex justify-between bg-pink-300 h-20 items-center">
+    <div className="flex justify-between bg-sky-100 h-20 items-center sticky top-0">
 
       <div className="flex items-center">
         <img src={image} alt="hi" className="w-20 mx-5"/>
@@ -23,13 +23,13 @@ const Header = ({ toggleTheme }) => {
         </div>
       </div>
 
-      <div className="flex p-10">
-        {isOnline ?<h1>✅</h1> :<h1>🔴 </h1>}
-        <ul className="flex mx-5">
-          <li className="mx-5"><Link to="/">Home</Link></li>
-          <li className="mx-5"><Link to="/about">About</Link></li>
-          <li className="mx-5"><Link to="/card">Cart</Link></li>
-          <li className="mx-5"><Link to="/profile">Profile</Link></li>
+      <div className="flex itmes-center justify-center">
+        {/* {isOnline ?<h1>✅</h1> :<h1>🔴 </h1>} */}
+        <ul className="flex itmes-center justify-center">
+          <li className="mx-1 p-6 rounded-lg text-indigo-600 font-bold text-xl text-center hover:underline"><Link to="/">Home</Link></li>
+          <li className="mx-1 p-6 rounded-lg text-indigo-600 font-bold text-xl text-center hover:underline"><Link to="/about">About</Link></li>
+          <li className="mx-1 p-6 rounded-lg text-indigo-600 font-bold text-xl text-center hover:underline"><Link to="/card">Cart</Link></li>
+          {/* <li className="mx-1 p-6 rounded-lg text-indigo-600 font-bold text-xl text-center hover:underline"><Link to="/profile">Profile</Link></li> */}
         </ul>
       </div>
 
