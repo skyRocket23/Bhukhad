@@ -5,11 +5,16 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
-import { SWIGGY_API } from "../../constant";
+import useLocation from "../../hooks/useLocation";
 
 const Body = () => {
   const [input, setInput] = useState("");
-  const {dhabas,filterDhaba} = useFetch(SWIGGY_API);
+
+  const {longitude,latitude} = useLocation();
+  const {dhabas,filterDhaba} = useFetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`);
+
+
+  console.log(longitude,latitude);
 
   return (
     <div className="bg-sky-50" >

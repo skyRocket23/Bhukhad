@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./RestaurantMenu.css";
 import useFetchRestaurant from "../hooks/useFetchRestaurant";
+import Shimmer from "./body/Shimmer";
 
 const RestaurantMenu = () => {
   
@@ -13,7 +14,8 @@ const RestaurantMenu = () => {
       <h1>{name}</h1>
 
       <div className="baap__Deta">
-        {baapDeta.map((itenary, index) => {
+
+        {baapDeta.length>0 ? baapDeta.map((itenary, index) => {
           const { title, itemCards } = itenary?.card?.card;
 
           return (
@@ -27,7 +29,7 @@ const RestaurantMenu = () => {
               </ul>
             </div>
           );
-        })}
+        }):<Shimmer/>}
       </div>
     </div>
   );

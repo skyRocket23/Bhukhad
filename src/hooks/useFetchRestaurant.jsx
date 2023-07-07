@@ -8,7 +8,7 @@ const useFetchRestaurant = (id) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://instafood.onrender.com/api/menu?lat=29.2182644&lng=79.5129767&offset=15&restaurantId=${id}`
+          `https://instafood.onrender.com/api/menu?lat=12.9715987&lng=77.5945627&offset=15&restaurantId=${id}`
         );
         const { data } = await response.json();
 

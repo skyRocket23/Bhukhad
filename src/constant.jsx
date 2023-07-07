@@ -1585,4 +1585,3 @@ export const restaurants = [{
 }
 ];
 
-export const SWIGGY_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.2182644&lng=79.5129767&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING";

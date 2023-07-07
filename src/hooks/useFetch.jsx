@@ -12,9 +12,9 @@ const useFetch = (url) => {
     const response = await fetch(
       url
     );
-    const json = await response.json();
-    const cards = await json.data.cards;
-    const cafe = await cards.map((card) => card.data);
+    const json = await response?.json();
+    const cards = await json?.data?.cards;
+    const cafe = await cards?.map((card) => card.data);
 
     setRestaurant(cafe);
     setDhaba(cafe);
