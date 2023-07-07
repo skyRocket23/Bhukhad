@@ -21,7 +21,7 @@ const App = () => {
       <div className="App" id={theme}>
         <Header toggleTheme={toggleTheme} />
         {/* <Body /> */}
-        <h1>hello</h1>
+        <h1>Bye</h1>
         <Outlet/>
         <Footer />
       </div>
