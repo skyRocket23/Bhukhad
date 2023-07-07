@@ -1,0 +1,31 @@
+import {useState,useEffect} from "react"
+
+const useCheckOnline = () => {
+   const[isOnline,setIsonline] = useState(true);
+
+   useEffect(() => {
+
+       const handleOnline = () => {
+           setIsonline(true);
+       }
+
+       const handleOffline = () => {
+        setIsonline(false);
+       }
+
+       window.addEventListener('online',handleOnline);
+       window.addEventListener('offline',handleOffline);
+       console.log("Event listeners added");
+
+       return () => {
+          window.removeEventListener('online',handleOnline);
+          window.removeEventListener('offline',handleOffline);
+          console.log("Event listners removed");
+       }
+
+   },[])
+
+   return isOnline;
+}
+
+export default useCheckOnline;

@@ -1,0 +1,55 @@
+*{
+    margin:0px;
+}
+
+#light {
+    background-color: #ffffff;
+    color:#1f2937
+    /* White background for light mode */
+}
+
+#dark {
+    background-color: #454655;
+       /* background-color: rgb(255, 255, 255); */
+    color:#ffffff;
+    /* color:black; */
+    /* Dark background for dark mode */
+}
+
+#light .restaurant {
+    background-color: #fff;
+}
+
+#dark .restaurant {
+    background-color:#202022;
+    /* background-color: rgb(255, 249, 81); */
+    color:white;
+    /* color:black; */
+}
+
+#dark .header{
+    background-color: rgb(32, 32, 34,0.95);
+      /* background-color: rgb(92, 209, 168); */
+}
+
+#light .header{
+    background-color: rgb(238, 103, 81,0.7);
+}
+
+#dark .restaurant {
+    box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.1);
+}
+
+
+#dark .restaurant:hover {
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+#dark .footer{
+    background-color: #202022;
+     color: white;
+}
+
+#light .footer{
+    background-color: rgb(238, 103, 81,0.7);
+}

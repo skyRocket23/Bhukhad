@@ -1,0 +1,79 @@
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.restaurant {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 289px;
+    height: 330px;
+    margin: 20px;
+    padding: 10px;
+    align-items: center;
+    font-size: 14px;
+    line-height: 16.8px;
+    word-spacing: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.restaurant:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.restaurant>img {
+    width: 95%;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    max-width: 500px;
+    margin: 20px;
+}
+
+.searchTerm {
+    flex: 1;
+    border: 3px solid #F3943D;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: red;
+}
+
+.searchTerm:focus {
+    color: #F3943D;
+}
+
+.searchButton {
+    width: 40px;
+    border: 1px solid #F3943D;
+    background: #F3943D;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
