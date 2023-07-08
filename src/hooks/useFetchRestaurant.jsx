@@ -2,6 +2,8 @@ import {useState,useEffect} from "react"
 
 const useFetchRestaurant = (id) => {
   const [name, setName] = useState("");
+  const [imageId,setImageId] = useState("");
+
   const [baapDeta, setBaapDeta] = useState([]);
 
   useEffect(() => {
@@ -13,6 +15,7 @@ const useFetchRestaurant = (id) => {
         const { data } = await response.json();
 
         setName(data?.cards[0]?.card?.card?.info?.name);
+        setImageId(data?.cards[0]?.card?.card?.info?.cloudinaryImageId);
 
         const baapDetaCards =
           data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards;
@@ -26,7 +29,7 @@ const useFetchRestaurant = (id) => {
   }, []);
 
 
-  return {name,baapDeta}
+  return {name,imageId,baapDeta}
 };
 
 export default useFetchRestaurant;

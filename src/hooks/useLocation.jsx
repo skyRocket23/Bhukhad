@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 const useLocation = () => {
-  const [latitude, setLatitude] = useState(13.0827);
-  const [longitude, setLongitude] = useState(80.2707);
+  const [latitude, setLatitude] = useState(29.2182644);
+  const [longitude, setLongitude] = useState(79.5129767);
 
   useEffect(() => {
     const fetchLocation = async () => {

@@ -11,7 +11,7 @@ const Header = ({ toggleTheme }) => {
   const isOnline = useCheckOnline();
 
   return (
-    <div className="flex justify-between bg-sky-100 h-20 items-center sticky top-0">
+    <div className="flex justify-between bg-sky-100 h-20 items-center sticky top-0 z-10">
 
       <div className="flex items-center">
         <img src={image} alt="hi" className="w-20 mx-5"/>
