@@ -3,24 +3,36 @@ import { useParams } from "react-router-dom";
 import "./RestaurantMenu.css";
 import useFetchRestaurant from "../hooks/useFetchRestaurant";
 import Shimmer from "./body/Shimmer";
+import {useSelector,useDispatch} from "react-redux"
+import {addItem} from "../redux/cartSlice"
 
 const RestaurantMenu = () => {
   const { id } = useParams();
   const { name, imageId, baapDeta } = useFetchRestaurant(id);
 
+  const items = useSelector(store => store.cart.items);
+  const dispatch = useDispatch();
+
+
+  const handleAddItem = (item) => {
+      dispatch(addItem(item));
+  }
+
+  // console.log(items);
+
   return (
-    <div className="flex justify-center align-center bg-sky-50">
-      <div className="mr-14 fixed left-48 top-48 h-full">
-        <h1 className="text-red-600 font-bold text-6xl">{name}</h1>
+    <div className=" bg-sky-50">
+      <div className="h-full">
+        <h1 className="text-red-600 font-bold text-6xl text-center">{name}</h1>
 
         <img
           src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${imageId}`}
           alt="imagefailed"
-          className="rounded-lg mb-3"
+          className="rounded-lg text-center my-auto"
         />
       </div>
 
-      <div className="relative top-24 left-80 z-0">
+      <div className="">
         {baapDeta.length > 0 ? (
           baapDeta.map((itenary, index) => {
             const { title, itemCards } = itenary?.card?.card;
@@ -31,8 +43,9 @@ const RestaurantMenu = () => {
                 <ul>
                   {itemCards?.map((item, subIndex) => {
                     const { name } = item?.card?.info;
-                    return <li key={subIndex}>{name}</li>;
+                    return <div  key={subIndex}><li>{name}</li><button onClick={() => handleAddItem(item?.card?.info)}>➕</button></div>;
                   })}
+                  
                 </ul>
               </div>
             );

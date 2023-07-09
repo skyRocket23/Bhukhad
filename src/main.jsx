@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import RestaurantMenu from "./components/RestaurantMenu.jsx";
 import Body from "./components/body/Body.jsx";
+import Cart from "./components/Cart.jsx";
 // import Profile from './components/Profile.jsx'
 
 const Profile = lazy(() => import("./components/Profile.jsx"));
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: "/cart",
+        element: <Cart/>
+      }
     ],
   },
 ]);
